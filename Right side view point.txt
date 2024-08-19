@@ -1,0 +1,48 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+class Node:
+    def __init__(self,key):
+        self.left=None
+        self.right=None
+        self.value=key
+class BinaryTree:
+    def __init__(self):
+        self.root=None
+    def _inorder_recursive(self, node):
+        if node:
+            self._inorder_recursive(node.left)
+            print(node.value, end='-')
+            self._inorder_recursive(node.right)
+            
+            
+#Right side view point    
+    def rightSideView(self, root, level=0, res=None):
+        if res is None:
+            res = []
+        if root is None:
+            return res
+        if len(res) == level:
+            res.append(root.value)
+        self.rightSideView(root.right,level+1, res)
+        self.rightSideView(root.left,level+1, res)
+        return res
+    
+tree = BinaryTree()
+tree.root = Node(5)
+tree.root.left = Node(2)
+tree.root.right = Node(1)
+tree.root.left.left = Node(3)
+tree.root.left.right = Node(9)
+tree.root.right.left = Node(4)
+
+
+#_inorder_recursive(tree.root1)
+print("Inorder traversal of the binary tree:")
+tree._inorder_recursive(tree.root)
+
+print("\nRight side view of the binary tree:",tree.rightSideView(tree.root))
