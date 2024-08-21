@@ -1,0 +1,52 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+class Node:
+    def __init__(self, key):
+        self.left = None
+        self.right = None
+        self.value = key
+
+class BinaryTree:
+    def __init__(self):
+        self.root = None
+
+    def _inorder_recursive(self, node):
+        if node:
+            self._inorder_recursive(node.left)
+            print(node.value, end='-')
+            self._inorder_recursive(node.right)
+#Ancestor of node i.e:write key value in root node
+    def lca(self, root, n1, n2):
+        if root is None:
+            return None
+        if root.value == n1 or root.value == n2:
+            return root
+        left_lca = self.lca(root.left, n1, n2)
+        right_lca = self.lca(root.right, n1, n2)
+        if left_lca and right_lca:
+            return root
+        return left_lca if left_lca is not None else right_lca
+
+# Creating the binary tree
+tree = BinaryTree()
+tree.root = Node(5)
+tree.root.left = Node(2)
+tree.root.right = Node(1)
+tree.root.left.left = Node(3)
+tree.root.left.right = Node(9)
+tree.root.right.left = Node(4)
+
+# Inorder traversal
+print("Inorder traversal:")
+tree._inorder_recursive(tree.root)
+print()
+
+# Finding the lowest common ancestor
+n1, n2 = 3, 4
+ancestor = tree.lca(tree.root, n1, n2)
+print(f"Lowest common ancestor of nodes {n1} and {n2}: {ancestor.value if ancestor else 'None'}")
