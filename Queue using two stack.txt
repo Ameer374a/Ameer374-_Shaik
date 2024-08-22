@@ -1,0 +1,33 @@
+'''
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+'''
+class QueueUsingTwoStacks:
+    def __init__(self):
+        self.stack1 = []  # Stack to handle enqueue operations
+        self.stack2 = []  # Stack to handle dequeue operations
+    
+    def enqueue(self, item):
+        self.stack1.append(item)
+        
+    def dequeue(self):
+        if not self.stack2:
+            # Move elements from stack1 to stack2 to reverse order
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        if not self.stack2:
+            raise IndexError("dequeue from an empty queue")
+        return self.stack2.pop()
+
+# Example usage
+queue = QueueUsingTwoStacks()
+queue.enqueue(1)
+queue.enqueue(2)
+print(queue.dequeue())  # Output: 1
+queue.enqueue(3)
+print(queue.dequeue())  # Output: 2
+print(queue.dequeue())  # Output: 3
