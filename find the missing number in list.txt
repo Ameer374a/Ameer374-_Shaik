@@ -1,0 +1,15 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+#tcs
+def find_missing_number(arr, n):
+    total_sum = n*(n+1) // 2
+    actual_sum=sum(arr)
+    return total_sum - actual_sum
+arr = [1,2,4,5]
+n = 5
+print(find_missing_number(arr, n))
