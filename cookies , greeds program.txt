@@ -1,0 +1,21 @@
+'''
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+'''
+def assign_cookies(greeds, cookies):
+    greeds.sort()
+    cookies.sort()
+    i = j =0
+    while i< len(greeds) and j<len(cookies):
+        if cookies[j] >= greeds[i]:
+            i += 1
+        else:
+            j += 1
+    return i
+greeds = [1,2,3] #children hunger level
+cookies = [1,1,2] #cookies count
+print (assign_cookies(greeds, cookies))
