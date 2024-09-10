@@ -1,0 +1,17 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+def remove_duplicate_unsorted(arr):
+    seen = set()
+    unique_arr = []
+    for num in arr:
+        if num not in seen:
+            seen.add(num)
+            unique_arr.append(num)
+    return unique_arr
+arr = [4,5,4,7,3,8]
+print(remove_duplicate_unsorted(arr))
