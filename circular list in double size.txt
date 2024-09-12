@@ -1,0 +1,14 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+original_list = [1,2,3,4,5]
+size = len(original_list)
+circular_list = [None]*(size*2)
+for i in range(size*2):
+    circular_list[i] = original_list[i%size]
+
+print(circular_list)
