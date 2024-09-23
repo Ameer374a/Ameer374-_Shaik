@@ -1,0 +1,20 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+def find_pairs_with_diference(num, k):
+    num_set = set(nums)
+    pairs = set()
+    for i in nums: 
+        if i+k in num_set:
+            pairs.add((i, i+k))
+        if i-k in num_set:
+            pairs.add((i, i-k))
+        return list(pairs)
+nums = [1,5,3,4,2]
+k = 4
+result = find_pairs_with_diference(nums,k)
+print(result)
