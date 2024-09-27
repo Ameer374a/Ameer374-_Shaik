@@ -1,0 +1,22 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+def is_palindrome(linked_list): #store all elements
+    values = linked_list
+    left = 0
+    right = len(values)-1
+    while left<right: #index L(0) < index R(3)
+        if values[left]!=values[right]:
+            return False
+        left+=1
+        right+=-1
+    return True
+linked_list=[1,2,2,1]
+print(is_palindrome(linked_list))
+linked_list=[1,2,3,4]
+print(is_palindrome(linked_list))
+            
