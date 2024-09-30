@@ -1,0 +1,24 @@
+'''
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+'''
+#print in list maxmum two number multiplicatin = result  [9*7=63]
+def max_product(arr):
+    if len(arr)<2:
+        return None
+    max1 = max2 =float('-inf')
+    for num in arr: #[3,5,1,9,7]
+        if num > max1:
+            max2 = max1
+            max1 = num
+        elif num > max2:
+            max2 = num
+    return max1 * max2
+    
+arr = [3,5,1,9,7]
+print(max_product(arr))
+        
